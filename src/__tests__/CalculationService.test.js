@@ -9,8 +9,8 @@ describe('Service Calculation Testing Step 1', () => {
         expect(CalculationService.calculate({ input: "20" } )).toBe(20);
     });
 
-    it('Input 1,5000 results in 5001', () => {
-        expect(CalculationService.calculate({ input: "1,5000" } )).toBe(5001);
+    it('Input 1,5000 results in 1', () => {
+        expect(CalculationService.calculate({ input: "1,5000" } )).toBe(1);
     });
 
     it('Input 1,1,1 results in 3', () => {
@@ -53,5 +53,11 @@ describe('Service Calculation Testing Step 4', () => {
 
     it('Input 2\n-1,-2 results in error being thrown', () => {
         expect(() => CalculationService.calculate({ input: "2\n-1,-2" })).toThrow();
+    });
+});
+
+describe('Service Calculation Testing Step 5', () => {
+    it('Input 2,1001,6 results in 8', () => {
+        expect(CalculationService.calculate({ input: "2,1001,6" })).toBe(8);
     });
 });

@@ -19,6 +19,8 @@ function calculate(payload)
 
   detectNegativeNums(nums);
 
+  nums = nums.filter(num => num < 1001);
+
   return nums.reduce((acc, val) => { return acc+val; }, 0);
 }
 

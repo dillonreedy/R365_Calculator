@@ -44,3 +44,8 @@ Adding support of multiline input, this is a demonstration of inputing in 1234\n
 Adding support of error feedback when the user attempts to input a negative number. In this video we input 1,-1,-2 and receive error feedback
 
 ![Demonstration of input 1,-1,-2](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/negative_number_error_support.gif)
+
+### Step 5 Demonstration
+Adding support for filtering out numbers that are larger than one thousand in the input field. In this video we input 2,1001,6 and receive error feedback
+
+![Demonstration of input 2,1001,6](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/filter_numbers_over_thousand.gif)
