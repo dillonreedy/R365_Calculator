@@ -33,3 +33,8 @@ After removing the error throwing code, we have the following output when a user
 The below demo inputs 3,1,1
 
 ![Demo of 3,1,1 input](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/demo_multiple_input.gif)
+
+### Step 3 Demonstration
+Adding support of multiline input, this is a demonstration of inputing in 1234\n2345
+
+![Demonstration of input 1234\n2345](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/newline_support.gif)

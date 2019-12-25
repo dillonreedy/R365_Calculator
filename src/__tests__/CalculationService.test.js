@@ -35,3 +35,9 @@ describe('Service Calculation Testing Step 2', () => {
         expect(CalculationService.calculate({ input: "1,2,3,4,5,6,7,8,9,10,11,12" } )).toBe(78);
     });
 });
+
+describe('Service Calculation Testing Step 3', () => {
+    it('Input 1\n2,3 results in 6', () => {
+        expect(CalculationService.calculate({ input: "1\n2,3" })).toBe(6);
+    });
+});

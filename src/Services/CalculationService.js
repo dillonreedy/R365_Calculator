@@ -2,7 +2,9 @@
 
 function calculate(payload)
 {
-  var nums = payload.input.split(',');
+  var delims = [',','\n'];
+
+  var nums = payload.input.split(new RegExp(delims.join('|'),'g'));
   
   nums = nums.filter(num => !isNaN(num) && num);
 

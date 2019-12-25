@@ -10,7 +10,8 @@ function CalculatorTextField(props) {
                    onChange={props.onChange}
                    error={props.error}
                    helperText={props.errorText}
-                   fullWidth/>
+                   fullWidth
+                   multiline/>
       );
 }
 
