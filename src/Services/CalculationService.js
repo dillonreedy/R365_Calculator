@@ -2,17 +2,31 @@ function escapeRegExp(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
 }
 
-function getRegexp(inputStr)
+function getRegexAndNumbers(inputStr)
 {
-  var customDelim = '';
-  var delims = [',', '\n'];
-   
-  if (inputStr.startsWith('//'))
-    customDelim = inputStr[2];
+    var singleCharRegex = /\/\/([^])\n([^]*)/;
+    var multiCharRegex = /\/\/(\[[^]*\])\n([^]*)/;
+    var delims = [',', '\n'];
 
-  if (customDelim) delims.push(escapeRegExp(customDelim));
+    if (multiCharRegex.test(inputStr))
+    {
+      delims.push(inputStr.match(multiCharRegex)[1]);
+      inputStr = inputStr.match(multiCharRegex)[2];
+    }
+    else if (singleCharRegex.test(inputStr))
+    {
+      delims.push(inputStr.match(singleCharRegex)[1]);
+      inputStr = inputStr.match(singleCharRegex)[2];
+    }
 
-  return new RegExp(delims.join('|'),'g');
+    delims = delims.map(delim => {
+      return (delim.length === 1) ?  escapeRegExp(delim) : delim;
+    });
+    
+    return [
+        new RegExp(delims.join('|'),'g'),
+        inputStr,
+    ];
 }
 
 function detectNegativeNums(nums)
@@ -25,11 +39,9 @@ function detectNegativeNums(nums)
 
 function calculate(payload)
 {
-  var regex = getRegexp(payload.input);
+  var [regex, extractedInputStr] = getRegexAndNumbers(payload.input);
 
-  if (payload.input.startsWith('//')) payload.input = payload.input.substring(4);
-
-  var nums = payload.input.split(regex);
+  var nums = extractedInputStr.split(regex);
   
   nums = nums.filter(num => !isNaN(num) && num);
 

@@ -77,3 +77,21 @@ describe('Service Calculation Testing Step 6', () => {
         expect(CalculationService.calculate({ input: "//+\n2+3" })).toBe(5);
     });
 });
+
+describe('Service Calculation Testing Step 7', () => {
+    it('Input //[***]\n11***22***33 results in 66', () => {
+        expect(CalculationService.calculate({ input: "//[***]\n11***22***33" })).toBe(66);
+    });
+
+    it('Input //[\n\n]\n1\n\n2\n\n3 results in 6', () => {
+        expect(CalculationService.calculate({ input: "//[\n\n]\n1\n\n2\n\n3" })).toBe(6);
+    });
+
+    it('Input //[,,,]\n1,,,2,,,3 results in 6', () => {
+        expect(CalculationService.calculate({ input: "//[,,,]\n1,,,2,,,3" })).toBe(6);
+    });
+
+    it('Input //[,]\n1,2,3 results in 6', () => {
+        expect(CalculationService.calculate({ input: "//[,]\n1,2,3" })).toBe(6);
+    });
+});
