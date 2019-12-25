@@ -1,6 +1,6 @@
 import CalculationService from '../Services/CalculationService';
 
-describe('Service Calculation Testing', () => {
+describe('Service Calculation Testing Step 1', () => {
     it('Input 10,20 results in 30', () => {
         expect(CalculationService.calculate({ input: "10,20" } )).toBe(30);
     });
@@ -14,9 +14,7 @@ describe('Service Calculation Testing', () => {
     });
 
     it('Input 1,1,1 throws an error', () => {
-        expect(() => {
-            CalculationService.calculate({ input: "1,1,1" } );
-        }).toThrow();
+        expect(CalculationService.calculate({ input: "1,1,1" } )).toBe(3);
     });
 
     it('Input 4,-3 results in 1', () => {
@@ -29,5 +27,11 @@ describe('Service Calculation Testing', () => {
 
     it('Input 5,tyty results in 5', () => {
         expect(CalculationService.calculate({ input: "5,tyty" })).toBe(5);
+    });
+});
+
+describe('Service Calculation Testing Step 2', () => {
+    it('Input 1,2,3,4,5,6,7,8,9,10,11,12 results in 78', () => {
+        expect(CalculationService.calculate({ input: "1,2,3,4,5,6,7,8,9,10,11,12" } )).toBe(78);
     });
 });
