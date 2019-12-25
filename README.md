@@ -55,7 +55,7 @@ Adding support for a custom delimiter. In this video we input //#\n2#5 which sho
 
 ![Demonstration of input //#\n2#5](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/single_custom_delim.gif)
 
-### Step 6 Demonstration
-Added support for a multi character custom delimiter for the input. In this video we input //[***]\n11***22***33 which should result in 66
+### Step 7 Demonstration
+Added support for a multi character custom delimiter for the input. In this video we input //[``***``]\n11``***``22``***``33 which should result in 66
 
 ![Demonstration of input //[***]\n11***22***33](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/multichar_custom_delim.gif)
