@@ -46,6 +46,11 @@ Adding support of error feedback when the user attempts to input a negative numb
 ![Demonstration of input 1,-1,-2](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/negative_number_error_support.gif)
 
 ### Step 5 Demonstration
-Adding support for filtering out numbers that are larger than one thousand in the input field. In this video we input 2,1001,6 and receive error feedback
+Adding support for filtering out numbers that are larger than one thousand in the input field. In this video we input 2,1001,6 and receive 8 as the result.
 
 ![Demonstration of input 2,1001,6](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/filter_numbers_over_thousand.gif)
+
+### Step 6 Demonstration
+Adding support for a custom delimiter. In this video we input //#\n2#5 which should result in 7
+
+![Demonstration of input //#\n2#5](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/single_custom_delim.gif)

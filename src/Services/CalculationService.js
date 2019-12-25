@@ -1,3 +1,19 @@
+function escapeRegExp(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
+}
+
+function getRegexp(inputStr)
+{
+  var customDelim = '';
+  var delims = [',', '\n'];
+   
+  if (inputStr.startsWith('//'))
+    customDelim = inputStr[2];
+
+  if (customDelim) delims.push(escapeRegExp(customDelim));
+
+  return new RegExp(delims.join('|'),'g');
+}
 
 function detectNegativeNums(nums)
 {
@@ -9,9 +25,11 @@ function detectNegativeNums(nums)
 
 function calculate(payload)
 {
-  var delims = [',','\n'];
+  var regex = getRegexp(payload.input);
 
-  var nums = payload.input.split(new RegExp(delims.join('|'),'g'));
+  if (payload.input.startsWith('//')) payload.input = payload.input.substring(4);
+
+  var nums = payload.input.split(regex);
   
   nums = nums.filter(num => !isNaN(num) && num);
 

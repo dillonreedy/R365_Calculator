@@ -61,3 +61,19 @@ describe('Service Calculation Testing Step 5', () => {
         expect(CalculationService.calculate({ input: "2,1001,6" })).toBe(8);
     });
 });
+
+
+
+describe('Service Calculation Testing Step 6', () => {
+    it('Input //#\n2#5 results in 7', () => {
+        expect(CalculationService.calculate({ input: "//#\n2#5" })).toBe(7);
+    });
+
+    it('Input //,\n2,ff,100 results in 102', () => {
+        expect(CalculationService.calculate({ input: "//,\n2,ff,100" })).toBe(102);
+    });
+
+    it('Input //+\n2+3 results in 5', () => {
+        expect(CalculationService.calculate({ input: "//+\n2+3" })).toBe(5);
+    });
+});
