@@ -9,8 +9,11 @@ function getRegexAndNumbers(inputStr)
     var delims = [',', '\n'];
 
     if (multiCharRegex.test(inputStr))
-    {
-      delims.push(inputStr.match(multiCharRegex)[1]);
+    {      
+      var customDelimsRegex = /\[([^]*?)\]/g;
+      var customDelimsList = inputStr.match(multiCharRegex)[1];
+      
+      delims.push(...customDelimsList.match(customDelimsRegex));
       inputStr = inputStr.match(multiCharRegex)[2];
     }
     else if (singleCharRegex.test(inputStr))
@@ -22,7 +25,7 @@ function getRegexAndNumbers(inputStr)
     delims = delims.map(delim => {
       return (delim.length === 1) ?  escapeRegExp(delim) : delim;
     });
-    
+
     return [
         new RegExp(delims.join('|'),'g'),
         inputStr,

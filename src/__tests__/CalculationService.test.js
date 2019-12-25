@@ -95,3 +95,14 @@ describe('Service Calculation Testing Step 7', () => {
         expect(CalculationService.calculate({ input: "//[,]\n1,2,3" })).toBe(6);
     });
 });
+
+
+describe('Service Calculation Testing Step 8', () => {
+    it('Input //[,,][,,,]\n1,,2,3,,,4 results in 10', () => {
+        expect(CalculationService.calculate({ input: "//[,,][,,,]\n1,,2,3,,,4" })).toBe(10);
+    });
+
+    it('Input //[*][!!][r9r]\n11r9r22*hh*33!!44 results in 110', () => {
+        expect(CalculationService.calculate({ input: "//[*][!!][r9r]\n11r9r22*hh*33!!44" })).toBe(110);
+    });
+});
