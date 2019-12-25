@@ -46,15 +46,54 @@ function calculate(payload)
 
   var nums = extractedInputStr.split(regex);
   
-  nums = nums.filter(num => !isNaN(num) && num);
+  nums = nums.map((num) => {
+    return (!isNaN(num) && num) ? num : 0;
+  });
 
   nums = nums.map(num => parseInt(num));
 
   detectNegativeNums(nums);
 
-  nums = nums.filter(num => num < 1001);
+  nums = nums.map((num) => {
+    return (num < 1001) ? num : 0;
+  });
 
-  return nums.reduce((acc, val) => { return acc+val; }, 0);
+  return performOperation(payload.operation, nums);
+}
+
+function performOperation(operation, nums)
+{
+
+  switch(operation) {
+    case '+':
+      return nums.reduce((acc, val) => { return acc+val; }, 0);
+    case '-':
+      if (nums.length === 0) return 0;
+      var initialValueSub = nums[0];
+
+      for (var i = 1; i < nums.length; i++)
+        initialValueSub -= nums[i];
+      
+      return initialValueSub;
+    case '×':
+      return nums.reduce((acc, val) => { return acc*val; }, 1);
+    case '÷':
+      if (nums.length === 0) return 0;
+      var initialValue = nums[0];
+
+      for (var j = 1; j < nums.length; j++)
+      {
+        if (nums[j] === 0)
+          throw new Error(`Cannot perform division by zero.`);
+        
+        initialValue = initialValue / nums[j];
+      }
+
+      return initialValue;
+
+    default:
+      throw new Error(`Operation ${operation} is not supported.`);
+  }
 }
 
 export default {

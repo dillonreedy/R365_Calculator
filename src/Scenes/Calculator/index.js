@@ -17,10 +17,10 @@ function Calculator() {
         setTextFieldValue(textFieldValue + num);
     };
 
-    const handleActionClick = (evt, action) => {
+    const handleActionClick = (evt, operation) => {
         try {
             var result = CalculationService.calculate({
-                action: action,
+                operation: operation,
                 input: textFieldValue,
             });
             setTextFieldValue(result);
@@ -51,7 +51,7 @@ function Calculator() {
                             />
                     </Box>
                     <Box width="25%">
-                            <ButtonGrid buttons={"+".split('')}
+                            <ButtonGrid buttons={"+-×÷".split('')}
                                        onClick={handleActionClick}
                                        color="default"
                             />

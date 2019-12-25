@@ -64,3 +64,22 @@ Added support for a multi character custom delimiter for the input. In this vide
 Added support for many multi character custom delimiters for input. In this video we input //[``*``][!!][r9r]\n11r9r22*hh*33!!44 which should result in 110
 
 ![Demonstration of input //[``*``][!!][r9r]\n11r9r22*hh*33!!44](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/many_multichar_custom_delim.gif)
+
+
+## Extra Projects
+
+### Supporting Subtraction, Multiplication, and Division
+It was very simple to add support for other math operations. All that was needed was to add a function to perform the specific operation. Then afterwards all the tests needed to be updated to now specify which operation they were performing. Below are demonstrations of each operation that was added
+
+#### Subtraction Operation
+![Demonstration of subtraction](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/subtraction_demo.gif)
+
+#### Multiplication Operation
+![Demonstration of multiplication](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/multiplication_demo.gif)
+
+#### Division Operation
+##### Simple Division
+![Demonstration of division](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/division_demo.gif)
+
+##### Division by Zero Error
+![Demonstration of division by zero](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/division_by_zero_demo.gif)
