@@ -13,12 +13,12 @@ describe('Service Calculation Testing Step 1', () => {
         expect(CalculationService.calculate({ input: "1,5000" } )).toBe(5001);
     });
 
-    it('Input 1,1,1 throws an error', () => {
+    it('Input 1,1,1 results in 3', () => {
         expect(CalculationService.calculate({ input: "1,1,1" } )).toBe(3);
     });
 
-    it('Input 4,-3 results in 1', () => {
-        expect(CalculationService.calculate({ input: "4,-3" })).toBe(1);
+    it('Input 4,-3 results in error being thrown', () => {
+        expect(() => CalculationService.calculate({ input: "4,-3" })).toThrow();
     });
 
     it('Input "" results in 0', () => {
@@ -39,5 +39,19 @@ describe('Service Calculation Testing Step 2', () => {
 describe('Service Calculation Testing Step 3', () => {
     it('Input 1\n2,3 results in 6', () => {
         expect(CalculationService.calculate({ input: "1\n2,3" })).toBe(6);
+    });
+});
+
+describe('Service Calculation Testing Step 4', () => {
+    it('Input -1 results in error being thrown', () => {
+        expect(() => CalculationService.calculate({ input: "-1" })).toThrow();
+    });
+
+    it('Input 1,-1,-1 results in error being thrown', () => {
+        expect(() => CalculationService.calculate({ input: "1,-1,-1" })).toThrow();
+    });
+
+    it('Input 2\n-1,-2 results in error being thrown', () => {
+        expect(() => CalculationService.calculate({ input: "2\n-1,-2" })).toThrow();
     });
 });

@@ -1,4 +1,11 @@
 
+function detectNegativeNums(nums)
+{
+  var negativeNums = nums.filter(num => num < 0);
+
+  if (negativeNums.length > 0)
+    throw new Error(`The following negative numbers were in your input: ${negativeNums.toString()}`);
+}
 
 function calculate(payload)
 {
@@ -9,6 +16,8 @@ function calculate(payload)
   nums = nums.filter(num => !isNaN(num) && num);
 
   nums = nums.map(num => parseInt(num));
+
+  detectNegativeNums(nums);
 
   return nums.reduce((acc, val) => { return acc+val; }, 0);
 }

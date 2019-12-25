@@ -17,7 +17,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm run tests`
+### `npm run test`
 
 This command will execute the tests that have been written for the web application.
 
@@ -38,3 +38,9 @@ The below demo inputs 3,1,1
 Adding support of multiline input, this is a demonstration of inputing in 1234\n2345
 
 ![Demonstration of input 1234\n2345](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/newline_support.gif)
+
+
+### Step 4 Demonstration
+Adding support of error feedback when the user attempts to input a negative number. In this video we input 1,-1,-2 and receive error feedback
+
+![Demonstration of input 1,-1,-2](https://github.com/dillonreedy/R365_Calculator/blob/master/demo_gifs/negative_number_error_support.gif)
